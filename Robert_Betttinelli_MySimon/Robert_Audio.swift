@@ -16,11 +16,18 @@ class Robert_Audio {
     
     func playSoundEffect(_ assetName:String) {
         
-            guard let audioData = NSDataAsset(name: assetName)?.data else {
+        guard let audioData = NSDataAsset(name: assetName)?.data else {
                 fatalError("Unable to find asset \(assetName)")
-            }
+        }
             
-            do {
+        do {
+                
+            try AVAudioSession.sharedInstance().setCategory(
+                AVAudioSession.Category.playback,
+                options: AVAudioSession.CategoryOptions.mixWithOthers
+            )
+            
+            try AVAudioSession.sharedInstance().setActive(true)
                 audioPlayer = try AVAudioPlayer(data: audioData)
                 audioPlayer?.prepareToPlay()
                 audioPlayer?.play()
@@ -28,9 +35,11 @@ class Robert_Audio {
                 if noError {
                     print(error.localizedDescription)
                 }
-            }
-            // audioPlayer?.stop()
+        }
+        //audioPlayer?.stop()
+        
     }
+    
     func stopPlay() {
         audioPlayer?.setVolume(0.0, fadeDuration: 0.25)
     }

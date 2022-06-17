@@ -39,13 +39,14 @@ class Robert_TableViewController: UITableViewController {
             
             let dateTimeThisGame = UserDefaults.standard.object(forKey: Constants.DATE_TIME+String(gameNumber)) as! Date
             
-            let orderOfMovesThisGame = UserDefaults.standard.array(forKey: Constants.ORDER_OF_MOVES+String(gameNumber)) as! [Int]
+            let orderOfMovesThisGame = UserDefaults.standard.string(forKey: Constants.ORDER_OF_MOVES+String(gameNumber))
             
-            let thisGameData = GameData(best: bestThisGame!, user: userThisGame!,dateTime: dateTimeThisGame, orderOfMoves: orderOfMovesThisGame)
+            let thisGameData = GameData(best: bestThisGame!, user: userThisGame!,dateTime: dateTimeThisGame, orderOfMoves: orderOfMovesThisGame!)
             
             gameDataArray.append(thisGameData)
 
         }
+        gameDataArray = gameDataArray.sorted(by: { $0.best > $1.best })
     }
     
     // MARK: - Table view data source
@@ -71,10 +72,13 @@ class Robert_TableViewController: UITableViewController {
         let thisRowData = gameDataArray[rowNumber]
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         
         dateFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.bestValue.text = thisRowData.best
+        cell.userValue.text = thisRowData.user
         cell.dateTimeValue.text = dateFormatter.string(from: thisRowData.dateTime)
         cell.gameData = thisRowData
         
@@ -117,15 +121,21 @@ class Robert_TableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         //let identifier = segue.identifier
+         
+         let whichCell =  sender as! Robert_TableViewCell
+         let destinationView = segue.destination as! Robert_GameViewController
+         destinationView.replayingPastGame = true
+         destinationView.pastGameData = whichCell.gameData
+         
+     }
+    
+    
 
 }
 
@@ -133,5 +143,5 @@ struct GameData {
     var best : String
     var user : String
     var dateTime : Date
-    var orderOfMoves : [Int]
+    var orderOfMoves : String
 }

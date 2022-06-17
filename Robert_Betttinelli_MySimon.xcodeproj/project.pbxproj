@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D65EB81627FD64CE009B42B0 /* Robert_HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EB81527FD64CE009B42B0 /* Robert_HistoryViewController.swift */; };
+		D65EB81827FF213F009B42B0 /* Robert_GameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EB81727FF213F009B42B0 /* Robert_GameSettingsViewController.swift */; };
+		D65EB81A2800801C009B42B0 /* Robert_HTTP_PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EB8192800801C009B42B0 /* Robert_HTTP_PostModel.swift */; };
 		D6DC4E7E27E82D10001EA831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC4E7D27E82D10001EA831 /* AppDelegate.swift */; };
 		D6DC4E8027E82D10001EA831 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC4E7F27E82D10001EA831 /* SceneDelegate.swift */; };
 		D6DC4E8227E82D10001EA831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC4E8127E82D10001EA831 /* ViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D65EB81527FD64CE009B42B0 /* Robert_HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robert_HistoryViewController.swift; sourceTree = "<group>"; };
+		D65EB81727FF213F009B42B0 /* Robert_GameSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robert_GameSettingsViewController.swift; sourceTree = "<group>"; };
+		D65EB8192800801C009B42B0 /* Robert_HTTP_PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robert_HTTP_PostModel.swift; sourceTree = "<group>"; };
 		D6DC4E7A27E82D10001EA831 /* Robert_Betttinelli_MySimon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robert_Betttinelli_MySimon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DC4E7D27E82D10001EA831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6DC4E7F27E82D10001EA831 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +80,13 @@
 				D6DC4E8827E82D10001EA831 /* LaunchScreen.storyboard */,
 				D6DC4E8B27E82D10001EA831 /* Info.plist */,
 				D6E5CA0D27F2AEAB0025D6D1 /* Robert_TableViewController.swift */,
-				D6E5CA0F27F2AFC70025D6D1 /* Robert_TableViewCell.swift */,
 				D6E5CA1127F2B0170025D6D1 /* Robert_MySimonGameModel.swift */,
+				D6E5CA0F27F2AFC70025D6D1 /* Robert_TableViewCell.swift */,
 				D6E5CA1327F2B3700025D6D1 /* Robert_GameViewController.swift */,
 				D6E5CA1527F2E7370025D6D1 /* Robert_Audio.swift */,
+				D65EB81527FD64CE009B42B0 /* Robert_HistoryViewController.swift */,
+				D65EB81727FF213F009B42B0 /* Robert_GameSettingsViewController.swift */,
+				D65EB8192800801C009B42B0 /* Robert_HTTP_PostModel.swift */,
 			);
 			path = Robert_Betttinelli_MySimon;
 			sourceTree = "<group>";
@@ -153,14 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65EB81A2800801C009B42B0 /* Robert_HTTP_PostModel.swift in Sources */,
 				D6DC4E8227E82D10001EA831 /* ViewController.swift in Sources */,
 				D6DC4E7E27E82D10001EA831 /* AppDelegate.swift in Sources */,
 				D6E5CA1227F2B0170025D6D1 /* Robert_MySimonGameModel.swift in Sources */,
+				D65EB81627FD64CE009B42B0 /* Robert_HistoryViewController.swift in Sources */,
 				D6E5CA1427F2B3700025D6D1 /* Robert_GameViewController.swift in Sources */,
 				D6E5CA1627F2E7370025D6D1 /* Robert_Audio.swift in Sources */,
 				D6E5CA0E27F2AEAB0025D6D1 /* Robert_TableViewController.swift in Sources */,
 				D6E5CA1027F2AFC70025D6D1 /* Robert_TableViewCell.swift in Sources */,
 				D6DC4E8027E82D10001EA831 /* SceneDelegate.swift in Sources */,
+				D65EB81827FF213F009B42B0 /* Robert_GameSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,11 +317,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VSF6LC8U6A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Robert_Betttinelli_MySimon/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,6 +336,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.georgian.robert.bettinelli.Robert-Betttinelli-MySimon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -333,11 +348,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VSF6LC8U6A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Robert_Betttinelli_MySimon/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -350,6 +367,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.georgian.robert.bettinelli.Robert-Betttinelli-MySimon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
